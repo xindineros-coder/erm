@@ -1,0 +1,555 @@
+/* Import Futuristic Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --neon-pink: #ff2ea6;
+    --dark-bg: #08030e;
+    --light-bg: #000000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top right, #000000, #0a0612);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+.navbar {
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   /* LEFT container vs RIGHT container */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+     margin-right: 110px; 
+}
+
+.navbar .logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--neon-pink);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--neon-pink);
+}
+
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 60px 50px;
+    min-height: 100vh;
+    position: relative;
+}
+
+.hero-text h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 55px;
+    line-height: 1.1;
+}
+
+.hero-text span {
+    color: var(--neon-pink);
+}
+
+.hero-text p {
+    width: 90%;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.hero-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Neon Buttons */
+.neon-btn, .neon-btn-outline {
+    padding: 12px 35px;
+    font-size: 16px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.neon-btn {
+    background: var(--neon-pink);
+    color: white;
+    box-shadow: 0 0 15px var(--neon-pink);
+}
+
+.neon-btn:hover {
+    box-shadow: 0 0 25px var(--neon-pink);
+}
+
+.neon-btn-outline {
+    border: 2px solid var(--neon-pink);
+    color: var(--neon-pink);
+}
+
+.neon-btn-outline:hover {
+    box-shadow: 0 0 20px var(--neon-pink);
+    background: rgba(255, 46, 166, 0.2);
+}
+
+/* HERO IMAGE */
+.hero-image img {
+    width: 630px;
+    border-radius: 20px;
+    bottom: 70px;
+}
+
+
+/* GLASS FLOATING CARDS */
+.glass-card {
+    position: absolute;
+    padding: 12px 22px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 1px solid rgba(255, 46, 166, 0.4);
+    box-shadow: 0 0 15px rgba(255, 46, 166, 0.3);
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.card1 { top: 25%; left: 55%; }
+.card2 { top: 55%; right: 12%; }
+.card3 { top: 70%; right: 30%; }
+
+/* FULLSCREEN ABOUT IMAGE */
+.about-section {
+    width: 100%;
+    height: 50%;             /* full screen height */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;          /* prevents extra scroll */
+}
+
+.about-full-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: drop-shadow(0 0 35px #ff2ea6);
+}
+
+.about-section {
+    width: 100%;
+    height: 90%;
+    padding: 0;
+    margin: 0;
+
+    background: radial-gradient(circle at center, #ff2ea6, #0a0013, #000000);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* PORTFOLIO CAROUSEL SECTION */
+.portfolio-carousel-section {
+    padding: 100px 40px;
+    text-align: center;
+    color: white;
+}
+
+.portfolio-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+}
+
+.portfolio-sub {
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+/* Carousel styling */
+.carousel-container {
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 25px;
+    padding: 20px;
+}
+
+
+/* Cards */
+.carousel-card {
+    min-width: 220px;
+    max-width: 220px;
+    height: 280px;
+    padding: 15px;
+    border-radius: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.carousel-card img {
+  width: 90%;
+  height: 180px;   /* increase image height */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.carousel-card h3 {
+    margin-top: 10px;
+    font-size: 16px;
+    white-space: normal;     /* allows wrapping */
+    word-wrap: break-word;   /* forces long text to stay inside */
+    overflow-wrap: break-word;
+}
+
+
+.text-box p {
+  text-align: justify;
+}
+
+
+/* Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 46, 166, 0.4);
+    box-shadow: 0 0 18px rgba(255, 46, 166, 0.15);
+    backdrop-filter: blur(8px);
+}
+
+.carousel-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(255, 46, 166, 0.5);
+}
+
+/* MODAL */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-box {
+    width: 350px;
+    padding: 25px;
+    border-radius: 16px;
+    position: relative;
+    text-align: center;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    font-size: 35px;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* modal content area */
+.modal-content {
+  margin-top: 18px;
+  min-height: 160px;
+  max-height: 60vh;
+  overflow-y: auto;
+  text-align: left;
+}
+
+/* image style */
+.modal-content img.modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 8px 30px rgba(255,46,166,0.14);
+}
+
+/* text container */
+.modal-content .text-container {
+  background: rgba(255,255,255,0.03);
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,46,166,0.08);
+}
+.modal-content .text-container p {
+  margin: 0;
+  line-height: 1.6;
+  color: #eee;
+  font-size: 15px;
+}
+
+/* OUTPUT SECTION (where A or B results appear outside modal) */
+.output-section {
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    min-height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 46, 166, 0.3);
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 25px rgba(255, 46, 166, 0.2);
+}
+
+.output-section img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255, 46, 166, 0.4);
+}
+
+.output-section .text-box {
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    padding: 100px 0;   /* no more uneven side padding */
+    color: white;
+    text-align: center;
+}
+
+.contact-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 48px;
+    margin-bottom: 50px;
+}
+
+/* FLEX WRAPPER */
+.contact-flex {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    
+    width: 100%;
+    max-width: 900px;      /* This ensures perfect center alignment */
+    margin: 0 auto;        /* Centers the entire contact box */
+    padding: 0 40px;       /* Equal spacing left and right */
+}
+
+
+/* LEFT SIDE — NO CONTAINER */
+.contact-info {
+    text-align: left;
+    max-width: 350px;
+}
+
+.contact-info h3 {
+    font-size: 20px;
+    color: var(--neon-pink);
+    margin-bottom: 10px;
+}
+
+.contact-email {
+    opacity: 0.85;
+    margin-bottom: 25px;
+}
+
+/* SOCIALS */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-icon {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--neon-pink);
+    opacity: 1;
+}
+
+/* RIGHT SIDE — FORM */
+/* RIGHT SIDE — FORM (no container box) */
+.contact-form {
+    padding: 0;             /* remove inner spacing */
+    width: 420px;
+    border-radius: 0;       /* remove rounded edges */
+    background: none;       /* remove dark box */
+    border: none;           /* remove border */
+    box-shadow: none;       /* remove glow box */
+}
+
+
+.contact-form button {
+    width: 150px;
+    display: block;
+    margin: 0 auto;        /* center button */
+}
+
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 90%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,46,166,0.3);
+    background: rgba(255,255,255,0.06);
+    color: white;
+    outline: none;
+}
+
+/* Focus glow */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 12px rgba(255,46,166,0.5);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .contact-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+}
+
+/* small additions for the fixed layout */
+.output-image {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255,46,166,0.25);
+}
+
+#backBtn {
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px 16px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -5;                 /* stays behind everything */
+    background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px; /* grid spacing */
+    opacity: 0.25;              /* faint like your screenshot */
+    pointer-events: none;
+}
+
+.carousel-container {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  padding: 40px 0;
+  scroll-behavior: smooth;
+  white-space: nowrap; /* keeps cards in a row */
+}
+
+
+.carousel-track {
+  display: flex;
+  gap: 30px;
+}
+
+.carousel-card {
+  scroll-snap-align: center;
+  width: 220px;
+  height: 300px;
+  background: #1a1a1a;
+  border-radius: 18px;
+  padding: 12px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.carousel-card img {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Center card highlight (auto detect with JS) */
+.carousel-card.active {
+  transform: scale(1.15);
+  box-shadow: 0 0 25px rgba(255, 0, 180, 0.5);
+}
